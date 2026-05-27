@@ -50,10 +50,52 @@ Soul Engine 是一個基於 **Rules / Skills / Agents / Hooks** 四個 Markdown 
 ## 安裝
 
 ```bash
+npm install -g soul-engine
+```
+
+或本地安裝：
+
+```bash
 npm install soul-engine
 ```
 
-## 快速開始
+## CLI 使用
+
+安裝後，在終端機可以使用 `soul-engine` 指令：
+
+```bash
+# 初始化設定檔（在目前目錄建立 Rules.md / Skills.md / Agents.md / Hooks.md）
+soul-engine init
+
+# 初始化到指定目錄
+soul-engine init ./my-project
+
+# 驗證設定檔格式
+soul-engine check
+
+# 查看所有 agent
+soul-engine agents
+
+# 查看所有 skill
+soul-engine skills
+
+# 執行任務（自動過五大原則、規則、指派 agent）
+soul-engine run "修復登入頁面的 CSRF 漏洞"
+
+# 指定 agent 和 skill
+soul-engine run --agent=developer --skill=bug-fix "修復一個 XSS 漏洞"
+
+# 指定設定檔目錄
+soul-engine run --dir=./my-project "開發新功能"
+
+# 輸出 system-prompt 格式（可直接貼入 AI 的 system prompt）
+soul-engine print . system-prompt
+
+# 輸出 JSON 格式
+soul-engine print . json
+```
+
+## 程式庫使用
 
 ### 1. 建立你的 Soul 設定檔
 

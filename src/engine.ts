@@ -21,6 +21,7 @@ import type {
   SoulConfig,
   ExecutionContext,
   ExecutionResult,
+  ExecutionError,
   PrincipleCheck,
 } from './types.js';
 
@@ -73,7 +74,7 @@ export class SoulEngine {
       soul: this.soul,
     };
 
-    const allErrors = [];
+    const allErrors: ExecutionError[] = [];
 
     // === Phase 1: 五大原則 ===
     const principleChecks = runAllPrinciples(ctx);
