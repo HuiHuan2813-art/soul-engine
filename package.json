@@ -1,0 +1,41 @@
+{
+  "name": "soul-engine",
+  "version": "0.1.0",
+  "description": "AI runtime engine — Rules / Skills / Agents / Hooks 驅動的可靠 AI 行為框架",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "start": "node dist/index.js"
+  },
+  "keywords": [
+    "ai",
+    "agent",
+    "soul",
+    "rules",
+    "skills",
+    "hooks",
+    "runtime",
+    "llm"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "gray-matter": "^4.0.3",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "typescript": "^5.7.0",
+    "vitest": "^2.1.8"
+  }
+}
