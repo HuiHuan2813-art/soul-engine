@@ -47,16 +47,33 @@ Soul Engine 是一個基於 **Rules / Skills / Agents / Hooks** 四個 Markdown 
 
 ---
 
+## 快速開始
+
+```bash
+# 1. 克隆 + 安裝 + 編譯
+git clone https://github.com/HuiHuan2813-art/soul-engine.git
+cd soul-engine
+npm install && npm run build
+
+# 2. 全域安裝 CLI
+npm install -g
+
+# 3. 在當前目錄初始化設定檔
+soul-engine init
+
+# 4. 執行第一個任務
+soul-engine run "開發一個登入頁面"
+```
+
 ## 安裝
 
 ```bash
+# 全域安裝（推薦）
 npm install -g soul-engine
-```
 
-或本地安裝：
-
-```bash
-npm install soul-engine
+# 或從原始碼安裝
+git clone https://github.com/HuiHuan2813-art/soul-engine.git
+cd soul-engine && npm install && npm run build && npm install -g
 ```
 
 ## CLI 使用
@@ -226,6 +243,20 @@ import type { Rule, Skill, Agent, Hook, SoulConfig } from 'soul-engine';
 ```
 
 ---
+
+## Claude Code 整合
+
+專案內含 `.claude/skills/soul-engine.md`，可直接在 Claude Code 中使用：
+
+```bash
+# 在 Claude Code 對話中直接叫用
+/soul-engine init          # 初始化設定檔
+/soul-engine run "任務"      # 執行任務
+/soul-engine check          # 驗證設定
+/soul-engine agents         # 查看 agent 角色
+```
+
+Skill 會自動判斷用戶意圖並調用對應的 CLI 子命令。
 
 ## 設計哲學
 
